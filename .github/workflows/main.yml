@@ -46,9 +46,6 @@ jobs:
             echo "[]" > wallet.json
           fi
 
-      - name: Install Dependencies
-        run: npm install
-
       - name: Download and Unzip union.zip
         run: |
           echo "📦 Downloading union.zip..."
@@ -56,6 +53,9 @@ jobs:
 
           echo "🧩 Unzipping union.zip to current directory..."
           unzip -o union.zip
+          
+      - name: Install Dependencies
+        run: npm install
 
       - name: Run Script
         run: node xion_babylon.js $$ node xion_holesky.js
